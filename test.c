@@ -15,12 +15,15 @@ void addDaysToDate(int* monthPtr,int *dayPtr, int *yearPtr, int daysToAdd){
 
 *dayPtr += daysToAdd;
 while(*dayPtr > 31){
+  
+
+  
   switch (*monthPtr){
-    case 01:
+    case 1:
     *monthPtr +=1;
     *dayPtr -= 31;
     continue;
-    case 02:
+    case 2:
     if(isLeapYear(*yearPtr)){
       *monthPtr +=1;
       *dayPtr -= 29;
@@ -30,7 +33,27 @@ while(*dayPtr > 31){
       *dayPtr -= 28;
       continue;
     }
-    case 03:
+    case 3:
+    *monthPtr +=1;
+    *dayPtr -= 31;
+    continue;
+    case 5:
+    *monthPtr +=1;
+    *dayPtr -= 31;
+    continue;
+    case 7:
+    *monthPtr +=1;
+    *dayPtr -= 31;
+    continue;
+    case 8:
+    *monthPtr +=1;
+    *dayPtr -= 31;
+    continue;
+    case 10:
+    *monthPtr +=1;
+    *dayPtr -= 31;
+    continue;
+    case 12:
     *monthPtr +=1;
     *dayPtr -= 31;
     continue;
@@ -39,8 +62,14 @@ while(*dayPtr > 31){
     *dayPtr -= 30;
     
   }
+  if(*monthPtr>12){
+    *monthPtr -= 12;
+    *yearPtr +=1;
+  }
 }
 }
+
+
 //attempt at advancing the date given by the user... a failed attempt...
   // *dayPtr += daysToAdd;
   // while( *dayPtr > 31){

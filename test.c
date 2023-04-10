@@ -62,10 +62,10 @@ while(*dayPtr > 31){
     *dayPtr -= 30;
     
   }
-  if(*monthPtr>12){
+ 
+  } if(*monthPtr>12){
     *monthPtr -= 12;
     *yearPtr +=1;
-  }
 }
 }
 
@@ -111,7 +111,7 @@ int main() {
   int *dayPtr = &day;
   int advance;
   int newYear;
-  int* yearPtr = &newYear;
+  int* yearPtr = &year;
   
   printf("Year to test?\n");
   scanf("%d", &year);
@@ -124,6 +124,6 @@ int main() {
   printf("How many days to advance by?");
   scanf("%d",&advance);
   addDaysToDate(monthPtr,dayPtr,yearPtr,advance);
-  printf("%d %d",month,day);
+  printf("%d/%d/%d",month,day, year);
 return 0;
 }
